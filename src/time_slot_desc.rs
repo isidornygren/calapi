@@ -14,6 +14,7 @@ pub enum TimeSlotParseError {
     StartDate,
     EndDate,
     Overflow,
+    AlarmDate,
 }
 
 impl std::fmt::Display for TimeSlotParseError {
@@ -36,6 +37,9 @@ impl std::fmt::Display for TimeSlotParseError {
             }
             Self::Overflow => {
                 write!(f, "Year overflow")
+            }
+            Self::AlarmDate => {
+                write!(f, "Could not parse alarm date")
             }
         }
     }
